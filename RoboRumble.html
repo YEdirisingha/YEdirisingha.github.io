@@ -105,14 +105,62 @@
                         <li>Power-Ups Integration: Diverse power-ups provide strategic advantages, enhancing gameplay dynamics without disrupting balance.</li>
                     <li>Spectator Mode: Allows eliminated players to observe ongoing matches, maintaining engagement and interaction within the game.</li>
                     </ul></p>
-                    <div class="col-md-12">
+                   <!-- <div class="col-md-12">
                         <table><tr>
                         <td><img src="img/portfolio-2.jpg" width="600" height="300" /></td>
                         <td><img src="img/Robo2 gameplay.jpg" width="600" height="300" /></td>
                         <td><img src="img/Robo3 Scripts.jpg"  width="600" height="300"/></td>
                         </tr>
                         </table>
-                    </div>
+                    </div>-->
+                    <div class="slider-container">
+    <div class="slider">
+        <div class="slide">
+            <img src="img/portfolio-2.jpg" alt="Image 1">
+        </div>
+        <div class="slide">
+            <img src="img/Robo2 gameplay.jpg" alt="Image 2">
+        </div>
+        <div class="slide">
+            <img src="img/Robo3 Scripts.jpg" alt="Image 3">
+        </div>
+    </div>
+    <div class="dots">
+        <span class="dot" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
+</div>
+
+<script>
+    let slideIndex = 0;
+
+    function showSlides() {
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        slides.forEach((slide, index) => {
+            slide.style.transform = `translateX(-${slideIndex * 100}%)`;
+        });
+
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[slideIndex].classList.add('active');
+
+        slideIndex = (slideIndex + 1) % slides.length;
+    }
+
+    function initSlider() {
+        showSlides();
+        setInterval(showSlides, 3000); // Change image every 3 seconds
+    }
+
+    function currentSlide(index) {
+        slideIndex = index;
+        showSlides();
+    }
+
+    window.onload = initSlider;
+</script>
                     <p>
                         <h4> Current Progress: </h4>
                         <p>The following components have been successfully developed:</p>
