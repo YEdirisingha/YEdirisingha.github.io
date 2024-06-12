@@ -113,7 +113,8 @@ The Halloween Wolf is an exciting infinite running game meticulously designed fo
                         </tr>
                         </table>
                     </div>-->
-                    <div class="slider-container">
+                    
+    <div class="slider-container">
     <div class="slider">
         <div class="slide">
             <img src="img/portfolio-1.jpg" alt="Image 1">
@@ -126,9 +127,9 @@ The Halloween Wolf is an exciting infinite running game meticulously designed fo
         </div>
     </div>
     <div class="dots">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+        <span class="dot" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
     </div>
 </div>
 
@@ -136,8 +137,8 @@ The Halloween Wolf is an exciting infinite running game meticulously designed fo
     let slideIndex = 0;
 
     function showSlides() {
-        let slides = document.querySelectorAll('.slide');
-        let dots = document.querySelectorAll('.dot');
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
 
         slides.forEach((slide, index) => {
             slide.style.transform = `translateX(-${slideIndex * 100}%)`;
@@ -152,6 +153,11 @@ The Halloween Wolf is an exciting infinite running game meticulously designed fo
     function initSlider() {
         showSlides();
         setInterval(showSlides, 3000); // Change image every 3 seconds
+    }
+
+    function currentSlide(index) {
+        slideIndex = index;
+        showSlides();
     }
 
     window.onload = initSlider;
