@@ -1,1 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>My Portfolio</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Portfolio HTML Template" name="keywords">
+        <meta content="Portfolio HTML Template" name="description">
 
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Solway:400,700&display=swap" rel="stylesheet"> 
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-image: url('your-dark-background-image.jpg');
+                background-size: cover;
+                background-position: center;
+                font-family: Arial, sans-serif;
+            }
+    
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent overlay */
+            }
+    
+            .content {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                color: white;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            }
+    
+            h1 {
+                font-size: 3em;
+                padding: 10px 20px;
+                background: rgba(255, 255, 255, 0.2); /* Light semi-transparent background */
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Header Start -->
+        
+        <!-- Header End -->
+
+        <!-- Nav Start -->
+        <div class="header">
+            <div class="container">
+
+                <div class="logo pull-left">
+                    
+                </div>
+
+                
+
+                <nav class="nav social-nav pull-right d-none d-lg-inline">
+                    <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="https://www.linkedin.com/in/yasindu-induwara-952a832b2"><i class="fa fa-linkedin"></i></a>
+                </nav>
+            </div>
+        </div>
+        <!-- Nav End -->
+
+        <!-- About Me Start-->
+        <div class="portfolio" id="portfolio">
+            <div class="container">
+                <header class="section-header">
+                    <h3 class="section-title">Retro raid</h3>
+                    <p>
+                       <h4> Description: </h4>
+                       A fast-paced 2D shooting game where the player moves left and right to dodge and shoot enemies descending from above. The objective is to eliminate enemies before they pass the player. If an enemy successfully gets past, the player's health decreases, adding an element of urgency and strategy to the gameplay.
+                    </p>
+                    <div class="video-container">
+                    <video class="responsive-video" controls>
+                        <source src="vid/roborumble 2[Trim].mp4" type="video/mp4">
+                        
+                        
+                    </video></div>
+                    <p>
+                        <h4> Features: </h4>
+                        <ul><li>Four distinct enemy types, including ones that fire player-tracking bullets.</li>
+                        <li>Challenging gameplay mechanics, requiring precise movement and shooting skills.</li>
+                        <li>Health-based survival system, where missing enemies reduces the player’s health.</li>
+                        <li>Smooth and responsive controls for an immersive gameplay experience.</li>
+                   
+                    </ul></p>
+                   <!-- <div class="col-md-12">
+                        <table><tr>
+                        <td><img src="img/portfolio-2.jpg" width="600" height="300" /></td>
+                        <td><img src="img/Robo2 gameplay.jpg" width="600" height="300" /></td>
+                        <td><img src="img/Robo3 Scripts.jpg"  width="600" height="300"/></td>
+                        </tr>
+                        </table>
+                    </div>-->
+                    <div class="slider-container">
+    <div class="slider">
+        <div class="slide">
+            <img src="img/portfolio-2.jpg" alt="Image 1">
+        </div>
+        <div class="slide">
+            <img src="img/Robo2 gameplay.jpg" alt="Image 2">
+        </div>
+        <div class="slide">
+            <img src="img/Robo3 Scripts.jpg" alt="Image 3">
+        </div>
+    </div>
+    <div class="dots">
+        <span class="dot" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
+</div>
+
+<script>
+    let slideIndex = 0;
+
+    function showSlides() {
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        slides.forEach((slide, index) => {
+            slide.style.transform = `translateX(-${slideIndex * 100}%)`;
+        });
+
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[slideIndex].classList.add('active');
+
+        slideIndex = (slideIndex + 1) % slides.length;
+    }
+
+    function initSlider() {
+        showSlides();
+        setInterval(showSlides, 3000); // Change image every 3 seconds
+    }
+
+    function currentSlide(index) {
+        slideIndex = index;
+        showSlides();
+    }
+
+    window.onload = initSlider;
+</script>
+                   
+                       <p> <h4> Technologies Used: </h4>
+                        <ul><li>Game Engine: Unity</li>
+                        <li>Programming Language: C#</li>
+                          <li>Physics & Collision Handling: Unity Physics Engine</li>
+                        <li>Visual Studio: Integrated development environment for code development and debugging.</li>
+                    </ul></p>
+
+                   <p> <h4> Achievements </h4>
+                        <ul><li>Developed core enemy AI and movement mechanics, including tracking bullets.</li>
+                        <li>Designed a functional player health system that reacts dynamically to gameplay.</li>
+                          <li>Implemented smooth and fluid shooting mechanics to enhance player control.</li>
+                        
+                    </ul></p>
+
+                    
+
+                    
+                </header>
+                </div>
+            </div>
+        </div>
+        <!-- About Me End-->
+        
+        <!-- Job Experience Start -->
+        
+        <!-- Job Experience End -->
+
+        <!-- Services Start -->
+        
+        <!-- Services End -->
+
+        <!-- Counter Start -->
+        
+        <!-- Counter End -->
+
+        <!-- Portfolio Start -->
+        
+        <!-- Portfolio End -->
+
+        <!-- Testimonials Start -->
+       
+        <!-- Testimonials End -->
+
+        <!-- Contact Start -->
+        <div class="contact" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h3>Contact Me</h3>
+                    <p>
+                        I'm always excited to connect with fellow game developers, potential collaborators, and anyone interested in my work. Whether you have questions about my projects, want to discuss game development, or are interested in potential collaborations, feel free to reach out to me through any of the following channels:
+
+
+                    </p>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="contact-info">
+                            <p><i class="fa fa-user"></i>Yasindu Induwara</p>
+                           
+                            
+                            <p><i class="fa fa-envelope"></i><a href="mailto:yasinduedirisingha@gmail.com">yasinduedirisingha@gmail.com</a></p>
+                            <p><i class="fa fa-phone"></i><a href="tel:+94782982529">+94782982529</a></p>
+                            <div class="social">
+                                <a href="https://x.com/YasinduEAI"><i class="fa fa-twitter"></i></a>
+                                <a href=""><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.linkedin.com/in/yasindu-induwara-952a832b2"><i class="fa fa-linkedin"></i></a>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+        <!-- Footer Start -->
+        <div class="footer">
+            <div class="container">
+                <div class="copyright">
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Footer end -->
+        
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/typed/typed.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/stickyjs/sticky.js"></script>
+        <script src="lib/superfish/hoverIntent.js"></script>
+        <script src="lib/superfish/superfish.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
